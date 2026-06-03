@@ -17,6 +17,8 @@ Typical usage from Python::
 Most people just use the command line::
 
     schemascribe --output docs
+
+Author: Vinod Bokare
 """
 
 from schemascribe.config import Config, DatabaseConfig, PartitionPattern
@@ -42,3 +44,4 @@ __all__ = [
 ]
 
 __version__ = "0.1.0"
+__author__ = "Vinod Bokare"

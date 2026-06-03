@@ -12,6 +12,9 @@ to AI assistants.
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Author](https://img.shields.io/badge/author-Vinod%20Bokare-orange.svg)](#-author)
+
+**Created and maintained by [Vinod Bokare](#-author)**
 
 </div>
 
@@ -190,6 +193,12 @@ in your database always takes precedence over a guess.
 Issues and PRs are very welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
 If SchemaScribe saved you time, please ⭐ the repo so others can find it!
 
+## 👤 Author
+
+**Vinod Bokare** — creator and maintainer of SchemaScribe.
+
+If this project helps you, a ⭐ on the repo means a lot.
+
 ## 📄 License
 
-[MIT](LICENSE) — free for personal and commercial use.
+[MIT](LICENSE) © Vinod Bokare — free for personal and commercial use.

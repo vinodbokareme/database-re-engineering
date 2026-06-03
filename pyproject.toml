@@ -13,7 +13,8 @@ keywords = [
     "postgresql", "database", "documentation", "schema", "reverse-engineering",
     "data-catalog", "metadata", "llm", "markdown",
 ]
-authors = [{ name = "SchemaScribe contributors" }]
+authors = [{ name = "Vinod Bokare" }]
+maintainers = [{ name = "Vinod Bokare" }]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",

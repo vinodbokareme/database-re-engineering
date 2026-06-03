@@ -197,3 +197,7 @@ SchemaScribe is an open, vendor-neutral way to build that layer in one command.
 
 Want to help build the layer the whole agent ecosystem stands on?
 See [CONTRIBUTING.md](CONTRIBUTING.md). ⭐
+
+---
+
+*Architecture and vision by **Vinod Bokare**, author and maintainer of SchemaScribe.*

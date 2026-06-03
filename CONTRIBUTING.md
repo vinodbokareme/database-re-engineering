@@ -55,3 +55,7 @@ schemascribe/
 ## Code of conduct
 
 Be kind and constructive. We're all here to make a useful tool.
+
+## Maintainer
+
+SchemaScribe is created and maintained by **Vinod Bokare**.
