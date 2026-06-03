@@ -1,0 +1,9 @@
+# Core runtime dependencies
+psycopg2-binary>=2.9
+Jinja2>=3.1
+
+# Optional but recommended:
+#   PyYAML        -> needed only if you pass a --config file
+#   python-dotenv -> auto-loads a .env file with your PG* credentials
+PyYAML>=6.0
+python-dotenv>=1.0

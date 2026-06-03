@@ -1,0 +1,69 @@
+# =============================================================================
+# SchemaScribe configuration (all sections optional)
+# =============================================================================
+# Run with:  schemascribe --config config.yaml --output docs
+#
+# Everything here OVERRIDES SchemaScribe's built-in defaults. Delete any section
+# you don't care about — the defaults are sensible for most databases.
+#
+# Database CREDENTIALS are intentionally NOT read from this file. Keep them in
+# environment variables / .env so secrets never get committed.
+
+# Connection knobs that are safe to keep in version control:
+database:
+  sslmode: prefer
+  statement_timeout_ms: 120000   # abort any single query after 2 minutes
+  connect_timeout: 30
+
+# Schemas to skip entirely.
+excluded_schemas:
+  - pg_catalog
+  - information_schema
+  - pg_toast
+
+# How your time-partitioned tables are named. First match wins; capture group 1
+# is treated as the base (un-partitioned) name.
+partition_patterns:
+  - { regex: '^(.+)_(\d{4})_q(\d)$', type: quarterly }
+  - { regex: '^(.+)_(\d{4})_(\d{2})$', type: monthly }
+  - { regex: '^(.+)_(\d{6})$', type: monthly }
+  - { regex: '^(.+)_(\d{4})$', type: yearly }
+
+# Tables to treat as framework noise rather than business data.
+infrastructure_exact:
+  - flyway_schema_history
+  - schema_migrations
+  - alembic_version
+infrastructure_prefixes:
+  - qrtz_
+  - celery_
+
+# Suffixes that mark audit / history tables.
+audit_suffixes:
+  - _audit
+  - _history
+
+# Tag tables by the keywords found in their names (purely for labelling).
+domain_vocabulary:
+  transactional: [order, payment, invoice, transaction]
+  user_account: [user, account, member, profile]
+  catalog: [product, item, sku, catalog]
+
+# Teach SchemaScribe about your central reference tables so it can infer join
+# paths even where no foreign key is declared. Key = column name (lower-case).
+reference_tables:
+  customer_id:
+    - { schema: public, table: customers, column: id }
+  product_id:
+    - { schema: public, table: products, column: id }
+
+# Add meanings for columns specific to your domain. Merged on top of the
+# built-in glossary, so you only list the extras.
+column_glossary:
+  mrr: "Monthly recurring revenue"
+  arr: "Annual recurring revenue"
+  churn_date: "Date the customer cancelled"
+
+# A run of tables sharing a base name must have at least this many members to
+# count as a partition set.
+min_partition_group_size: 2

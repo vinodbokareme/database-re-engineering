@@ -216,3 +216,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# JetBrains IDE
+.idea/
+
+# SchemaScribe runtime artifacts (the generated docs/ themselves are meant to be committed)
+schemascribe.log
+.checkpoint.json

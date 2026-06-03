@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "schemascribe"
+version = "0.1.0"
+description = "Turn any PostgreSQL database into beautiful, human- and AI-readable documentation."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = [
+    "postgresql", "database", "documentation", "schema", "reverse-engineering",
+    "data-catalog", "metadata", "llm", "markdown",
+]
+authors = [{ name = "SchemaScribe contributors" }]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Database",
+    "Topic :: Documentation",
+]
+dependencies = [
+    "psycopg2-binary>=2.9",
+    "Jinja2>=3.1",
+]
+
+[project.optional-dependencies]
+yaml = ["PyYAML>=6.0"]
+dotenv = ["python-dotenv>=1.0"]
+all = ["PyYAML>=6.0", "python-dotenv>=1.0"]
+dev = ["pytest>=7.0", "PyYAML>=6.0", "python-dotenv>=1.0"]
+
+[project.urls]
+Homepage = "https://github.com/your-username/database-re-engineering"
+Repository = "https://github.com/your-username/database-re-engineering"
+Issues = "https://github.com/your-username/database-re-engineering/issues"
+
+[project.scripts]
+schemascribe = "schemascribe.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["schemascribe*"]
+
+[tool.setuptools.package-data]
+schemascribe = ["templates/*.j2"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
